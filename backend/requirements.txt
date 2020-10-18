@@ -1,0 +1,10 @@
+Flask
+flask_restful
+flask-cors
+markdown
+weasyprint
+beautifulsoup4
+pygments
+markdown-katex==202004.14b0
+mdx-footnotes2
+gunicorn

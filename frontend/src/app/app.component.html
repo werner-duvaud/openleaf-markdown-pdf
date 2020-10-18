@@ -1,0 +1,75 @@
+<div class="screen">
+	<nav class="nav-column">
+		<span style="padding-top: 20px;">
+			<button mat-icon-button (click)="downloadPdf()">
+				<mat-icon>get_app</mat-icon>
+			</button>
+    </span>
+    <span class="tools">
+			<button mat-icon-button (click)="changeLineStyle('# ');updatePdf()">
+				<mat-icon>format_size</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeWordStyle('**', '**');updatePdf()">
+				<mat-icon>format_bold</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeWordStyle('*', '*');updatePdf()">
+				<mat-icon>format_italic</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeLineStyle('> ');updatePdf()">
+				<mat-icon>format_quote</mat-icon>
+			</button>
+			<button mat-icon-button (click)="addCode();updatePdf()">
+				<mat-icon>code</mat-icon>
+			</button>
+			<button mat-icon-button (click)="addAdmonition();updatePdf()">
+				<mat-icon>error_outline</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeWordStyle('[', ']()');updatePdf()">
+				<mat-icon>link</mat-icon>
+			</button>
+			<button mat-icon-button (click)="addImage();updatePdf()">
+				<mat-icon>insert_photo</mat-icon>
+			</button>
+			<button mat-icon-button (click)="addCenter();updatePdf()">
+				<mat-icon>format_align_center</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeLineStyle('\*\ ');updatePdf()">
+				<mat-icon>format_list_bulleted</mat-icon>
+			</button>
+			<button mat-icon-button (click)="changeLineStyle('[ ] ');updatePdf()">
+				<mat-icon>check_box_outline</mat-icon>
+			</button>
+			<button mat-icon-button [matMenuTriggerFor]="expandMenu">
+				<mat-icon>expand_more</mat-icon>
+			</button>
+			<mat-menu #expandMenu="matMenu">
+				<button mat-menu-item (click)="insertText('\n\\no-header\n# Table of content\n[toc]\n');updatePdf()">Table of content</button>
+				<button mat-menu-item (click)="addMath();updatePdf()">Math</button>
+				<button mat-menu-item (click)="insertText('\\today');updatePdf()">Date</button>
+				<button mat-menu-item (click)="insertText('\\page-break');updatePdf()">Page break</button>
+				<button mat-menu-item (click)="insertText('\\no-header');updatePdf()">No header</button>
+      </mat-menu>
+    </span>
+		<span style="padding-bottom: 20px;">
+			<button mat-icon-button [matMenuTriggerFor]="settingsMenu">
+				<mat-icon>settings</mat-icon>
+			</button>
+			<mat-menu #settingsMenu="matMenu">
+				<button mat-menu-item (click)="downloadMarkdown()">Download as Markdown</button>
+				<button mat-menu-item (click)="downloadHtml()">Download as HTML</button>
+			</mat-menu>
+			<a href="https://github.com/werner-duvaud/openleaf-markdown-pdf">
+			<img class="github" src="assets/GitHub-Mark-Light-32px.png"/>
+			</a>
+		</span>
+  </nav>
+  
+	<div class="main">
+    <div class="markdown">
+      <textarea [(ngModel)]="markdown" (ngModelChange)="inputChanged()" (select)="selectionchange($event)" (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" #myTextArea></textarea>
+    </div>
+    <div class="pdf">
+      <pdf-viewer [src]="pdfPath" [render-text]="true" [original-size]="false" [autoresize]="true" (after-load-complete)="afterLoadComplete()" #pdf></pdf-viewer>
+    </div>
+	</div>
+</div>

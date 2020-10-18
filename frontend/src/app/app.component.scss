@@ -1,0 +1,76 @@
+.screen {
+    height: 100vh;
+    width: 100vw;
+    max-width:100%;
+    max-height: 100%;
+    display: flex;
+}
+
+.nav-column {
+    color: white;
+    background-color: black;
+    width: 80px;
+    height: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.markdown {
+    width: 48.5%;
+    height: 98%;
+}
+
+.pdf {
+    width: 48.5%;
+    height: 98%;
+}
+
+pdf-viewer {
+    display: block;
+    height: 100%;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    
+    height: 99.5%;
+    width: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding: 60px 60px 0px 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+::ng-deep .mat-menu-panel {
+background-color: #20222f;
+}
+
+.github {
+    height: 32px;
+    margin: auto;
+    margin-top: 8px;
+    display: flex;
+}
