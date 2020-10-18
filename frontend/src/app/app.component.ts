@@ -96,7 +96,7 @@ export class AppComponent implements OnInit{
 	}
 
 	getCaretPos(event) {
-		if (event.selectionStart || event.selectionStart == '0') {
+		if (event.selectionStart == event.selectionEnd) {
 			this.caretPos = event.selectionStart;
 			this.endCaretPos = undefined;
 		}
