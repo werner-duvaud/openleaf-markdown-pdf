@@ -14,8 +14,8 @@ https://openleaf.herokuapp.com
 git clone https://github.com/werner-duvaud/openleaf-markdown-pdf.git
 cd openleaf-markdown-pdf/frontend
 
-npm run build-local
-npm start
+npm install
+ng serve
 ```
 
 Server will be started at http://localhost:4200
