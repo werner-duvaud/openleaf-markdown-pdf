@@ -57,8 +57,8 @@ python backend.py
 Launch frontend:
 ```bash
 cd openleaf-markdown-pdf/frontend
-npm run build-local
-npm start
+npm install
+ng serve
 ```
 
 Navigate to http://localhost:4200
